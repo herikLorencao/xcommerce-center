@@ -2,8 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Pessoa;
-use App\Service\Serializer\CustomSerializer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,11 +15,12 @@ class PessoaController extends AbstractController
 {
 
     /**
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_OAUTH2_READ")
      * @Route("", methods={"POST","HEAD"})
      */
     public function create(Request $request)
     {
+        // $this->repo->
         dd(json_decode($request->getContent()));
         // $pessoa = $serializer->deserialize($request->getContent(), Pessoa::class);
         // dump($pessoa);
